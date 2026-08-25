@@ -35,7 +35,7 @@ Importing the data with skipping header as the table is created with headers
 
 -- Copying the dataset into this raw table
 COPY md_schema.machine_telemetry
-FROM 'D:\Data Analysis project\Gemini\SQL\Project 1\ai4i+2020+predictive+maintenance+dataset\ai4i2020.csv'
+FROM '/your/local/directory/ai4i2020.csv'
 DELIMITER ','
 CSV HEADER;
 
