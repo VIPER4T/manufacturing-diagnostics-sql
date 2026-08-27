@@ -1,0 +1,4 @@
+"machine_type","total_batches","tool_wear_failure","heat_dissipation_failure","overstrain_failure"
+"L",6000,25,76,87
+"M",2997,14,31,9
+"H",1003,7,8,2

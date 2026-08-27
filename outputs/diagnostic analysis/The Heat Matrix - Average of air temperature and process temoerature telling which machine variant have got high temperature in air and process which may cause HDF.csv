@@ -1,0 +1,4 @@
+"machine_type","total_batches","average_air_temp_k","average_process_temp_k","max_process_temp_k"
+"M",2997,300.03,310.02,313.8
+"L",6000,300.02,310.01,313.8
+"H",1003,299.87,309.93,313.5
