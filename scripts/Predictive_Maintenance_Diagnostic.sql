@@ -160,3 +160,21 @@ SELECT
 FROM md_schema.machine_telemetry
 WHERE twf + hdf + pwf + osf + rnf > 1
 ORDER BY simultaneous_failures DESC;
+
+-- STAGE 3 COMPLETED
+
+/*
+STAGE 4: PERFORMANCE TUNING PROOF
+This section utilizes EXPLAIN ANALYZE to verify database architecture.
+By querying a highly selective filter (osf = 1), we force the PostgreSQL Query Planner to abandon a Sequential Scan and utilize the B-Tree index (idx_osf) we built in Stage 1.
+*/
+
+EXPLAIN ANALYZE
+SELECT 
+	product_id, 
+	torque_nm, 
+	rotational_speed_rpm
+FROM md_schema.machine_telemetry
+WHERE osf = 1;
+
+-- STAGE 4 COMPLETED
