@@ -35,7 +35,7 @@ Importing the data with skipping header as the table is created with headers
 
 -- Copying the dataset into this raw table
 COPY md_schema.machine_telemetry
-FROM '/your/local/directory/ai4i2020.csv'
+FROM 'D:\Data Analysis project\Gemini\SQL\Project 1\ai4i+2020+predictive+maintenance+dataset\ai4i2020.csv'
 DELIMITER ','
 CSV HEADER;
 
@@ -82,7 +82,7 @@ SELECT
 	MAX(torque_nm) AS max_torque_nm -- MAX torque in NM
 FROM md_schema.machine_telemetry;
 
--- Tool Lifecycle: Aveerage tool wear as a usage in minutes and maximum tool wear which shows how much time taken to use which degrades over period of time.
+-- Tool Lifecycle: Average tool wear as a usage in minutes and maximum tool wear which shows how much time taken to use which degrades over period of time.
 SELECT
 	SUM(tool_wear_min) AS total_tool_wear_min,	
 	ROUND(AVG(tool_wear_min),2) AS average_tool_wear_min,
