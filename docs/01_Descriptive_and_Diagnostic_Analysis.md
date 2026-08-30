@@ -24,7 +24,7 @@ FROM md_schema.machine_telemetry;
 | :--- | :--- | :--- | :--- |
 | 10000 | 339 | 3.39 | 96.61 |
 
-📁 *[View Result Data here](url)*
+📁 *[View Result Data here](https://github.com/VIPER4T/manufacturing-diagnostics-sql/blob/a64bc8d81aa0abd4c09b35e00651239fc10acc6e/outputs/descriptive%20analysis/Production%20baseline%20-%20no%20of%20batches%20per%20machine%20type.csv))*
 
 **Key Takeaway:** The factory maintains a solid 96.61% baseline yield, meaning our diagnostic efforts must isolate a highly specific 3.39% failure gap.
 
