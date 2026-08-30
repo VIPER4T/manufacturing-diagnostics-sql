@@ -178,3 +178,17 @@ FROM md_schema.machine_telemetry
 WHERE osf = 1;
 
 -- STAGE 4 COMPLETED
+
+-- Additional Queries
+-- Minimum and Maximum tool wear failure
+SELECT
+	MIN(tool_wear_min) AS minimum_failure_time,
+	MAX(tool_wear_min) AS maximum_failure_time
+FROM md_schema.machine_telemetry
+WHERE twf = 1;
+
+-- Multiple failure count more than once
+SELECT
+	COUNT(*) AS multiple_failure_count
+FROM md_schema.machine_telemetry
+WHERE (twf + hdf + pwf + osf + rnf) > 1;
