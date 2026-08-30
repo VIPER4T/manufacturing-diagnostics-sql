@@ -24,7 +24,7 @@ FROM md_schema.machine_telemetry;
 | :--- | :--- | :--- | :--- |
 | 10000 | 339 | 3.39 | 96.61 |
 
-📁 *[View Result Data here](https://github.com/VIPER4T/manufacturing-diagnostics-sql/blob/a64bc8d81aa0abd4c09b35e00651239fc10acc6e/outputs/descriptive%20analysis/Production%20baseline%20-%20no%20of%20batches%20per%20machine%20type.csv))*
+📁 *[View Result Data here](https://github.com/VIPER4T/manufacturing-diagnostics-sql/blob/a64bc8d81aa0abd4c09b35e00651239fc10acc6e/outputs/descriptive%20analysis/Production%20baseline%20-%20no%20of%20batches%20per%20machine%20type.csv)*
 
 **Key Takeaway:** The factory maintains a solid 96.61% baseline yield, meaning our diagnostic efforts must isolate a highly specific 3.39% failure gap.
 
@@ -47,7 +47,7 @@ FROM md_schema.machine_telemetry;
 | :--- | :--- | :--- | :--- | :--- |
 | [Insert Data] | [Insert Data] | [Insert Data] | [Insert Data] | [Insert Data] |
 
-📁 *[View Result Data here](url)*
+📁 *[View Result Data here](https://github.com/VIPER4T/manufacturing-diagnostics-sql/blob/c8e28c0c9510bfe84fd019e008398900facc9ff3/outputs/descriptive%20analysis/Failure%20Categorization%20-%20Machine%20failed%20due%20to%20different%20factors%20such%20as%20TWF%20Tool%20Wear%20Failure%2C%20HDF%20Heat%20Dissipation%20Failure%2C%20PWF%20Power%20Failure%2C%20OSF%20Overstrain%20Failure%2C%20RNF%20Random%20Failures.csv)*
 
 **Key Takeaway:** The majority of factory breakdowns are not random; they are heavily concentrated in specific mechanical and electrical faults.
 
@@ -67,7 +67,7 @@ FROM md_schema.machine_telemetry;
 | :--- | :--- |
 | [Insert Data] | [Insert Data] |
 
-📁 *[View Result Data here](url)*
+📁 *[View Result Data here](https://github.com/VIPER4T/manufacturing-diagnostics-sql/blob/c8e28c0c9510bfe84fd019e008398900facc9ff3/outputs/descriptive%20analysis/Tool%20Lifecycle%20-%20Aveerage%20tool%20wear%20as%20a%20usage%20in%20minutes%20and%20maximum%20tool%20wear%20which%20shows%20how%20much%20time%20taken%20to%20use%20which%20degrades%20over%20period%20of%20time.csv)*
 
 **Key Takeaway:** Tools are capable of reaching a maximum lifespan of 253 minutes under optimal conditions.
 
@@ -96,7 +96,7 @@ ORDER BY total_batches DESC;
 | :--- | :--- | :--- | :--- | :--- |
 | [Insert Data] | [Insert Data] | [Insert Data] | [Insert Data] | [Insert Data] |
 
-📁 *[View Result Data here](url)*
+📁 *[View Result Data here](https://github.com/VIPER4T/manufacturing-diagnostics-sql/blob/c8e28c0c9510bfe84fd019e008398900facc9ff3/outputs/diagnostic%20analysis/Quality%20variant%20breaks%20distinguishment%20-%20Telling%20which%20variant%20of%20machine%20have%20high%20failures%20followed%20by%20other%20variants.csv)*
 
 **Business Recommendation:** Variant L is driving the majority of mechanical breakdowns, specifically in Overstrain Failures (OSF). Operations must focus mechanical adjustments directly on the Variant L production lines.
 
@@ -121,7 +121,7 @@ ORDER BY osf DESC;
 | 1 | 98 | 57.6 | 1354.2 |
 | 0 | 9902 | 39.8 | 1540.3 |
 
-📁 *[View Result Data here](url)*
+📁 *[View Result Data here](https://github.com/VIPER4T/manufacturing-diagnostics-sql/blob/c8e28c0c9510bfe84fd019e008398900facc9ff3/outputs/diagnostic%20analysis/OSF%20either%20due%20to%20torque%20or%20rotatioal%20speed%20-%20Distinguising%20between%20torque%20and%20rotational%20speed%20caused%20OSF.csv)*
 
 **Business Recommendation:** The data proves OSF is caused by the machines bogging down (dropping roughly 200 RPM) while the motor strains to compensate (torque spiking by nearly 50%). Feed rates for Variant L materials must be reduced to prevent this mechanical bottleneck.
 
@@ -142,7 +142,7 @@ WHERE twf = 1;
 | :--- | :--- |
 | [Insert Data] | [Insert Data] |
 
-📁 *[View Result Data here](url)*
+📁 *[View Result Data here](https://github.com/VIPER4T/manufacturing-diagnostics-sql/blob/3f7c66c2f4d45a7c74747b8f2003428e0df5908c/outputs/Additional%20Result%20Data/Minimum%20and%20Maximum%20tool%20wear.csv)*
 
 **Business Recommendation:** Despite the theoretical maximum of 253 minutes, empirical evidence proves no tool has ever failed before 198 minutes. Mandating a strict tool-swap protocol at exactly 190 minutes will theoretically eliminate 100% of Tool Wear Failures (TWF) while maximizing safe tool utility.
 
@@ -162,6 +162,7 @@ WHERE (twf + hdf + pwf + osf + rnf) > 1;
 | :--- |
 | [Insert Data] |
 
-📁 *[View Result Data here](url)*
+📁 *[View Result Data here](https://github.com/VIPER4T/manufacturing-diagnostics-sql/blob/3f7c66c2f4d45a7c74747b8f2003428e0df5908c/outputs/Additional%20Result%20Data/Total%20Machine%20Failure%20more%20than%20once.csv
+)*
 
 **Business Recommendation:** The data reveals direct mechanical links between overstrain and electrical grids. When Variant L overstrains the motors, the resulting power draw frequently blows the factory breakers (Power Failures). Resolving the mechanical feed rates will organically resolve these secondary electrical cascades.
