@@ -45,7 +45,7 @@ FROM md_schema.machine_telemetry;
 **The Output Evidence:**
 | total_twf | total_hdf | total_pwf | total_osf | total_rnf |
 | :--- | :--- | :--- | :--- | :--- |
-| [Insert Data] | [Insert Data] | [Insert Data] | [Insert Data] | [Insert Data] |
+| 46 | 115 | 95 | 98 | 19 |
 
 📁 *[View Result Data here](https://github.com/VIPER4T/manufacturing-diagnostics-sql/blob/c8e28c0c9510bfe84fd019e008398900facc9ff3/outputs/descriptive%20analysis/Failure%20Categorization%20-%20Machine%20failed%20due%20to%20different%20factors%20such%20as%20TWF%20Tool%20Wear%20Failure%2C%20HDF%20Heat%20Dissipation%20Failure%2C%20PWF%20Power%20Failure%2C%20OSF%20Overstrain%20Failure%2C%20RNF%20Random%20Failures.csv)*
 
@@ -65,7 +65,7 @@ FROM md_schema.machine_telemetry;
 **The Output Evidence:**
 | average_tool_wear | max_tool_wear |
 | :--- | :--- |
-| [Insert Data] | [Insert Data] |
+| 107.95 | 253 |
 
 📁 *[View Result Data here](https://github.com/VIPER4T/manufacturing-diagnostics-sql/blob/c8e28c0c9510bfe84fd019e008398900facc9ff3/outputs/descriptive%20analysis/Tool%20Lifecycle%20-%20Aveerage%20tool%20wear%20as%20a%20usage%20in%20minutes%20and%20maximum%20tool%20wear%20which%20shows%20how%20much%20time%20taken%20to%20use%20which%20degrades%20over%20period%20of%20time.csv)*
 
@@ -94,7 +94,9 @@ ORDER BY total_batches DESC;
 **The Output Evidence:**
 | machine_type | total_batches | tool_wear_failure | heat_dissipation_failure | overstrain_failure |
 | :--- | :--- | :--- | :--- | :--- |
-| [Insert Data] | [Insert Data] | [Insert Data] | [Insert Data] | [Insert Data] |
+| L | 6000 | 25 | 76 | 87 |
+| M | 2997 | 14 | 31 | 9 |
+| H | 1003 | 7 | 8 | 2 |
 
 📁 *[View Result Data here](https://github.com/VIPER4T/manufacturing-diagnostics-sql/blob/c8e28c0c9510bfe84fd019e008398900facc9ff3/outputs/diagnostic%20analysis/Quality%20variant%20breaks%20distinguishment%20-%20Telling%20which%20variant%20of%20machine%20have%20high%20failures%20followed%20by%20other%20variants.csv)*
 
@@ -118,8 +120,8 @@ ORDER BY osf DESC;
 **The Output Evidence:**
 | osf | total_batches | average_torque_nm | average_rotation_speed_rpm |
 | :--- | :--- | :--- | :--- |
-| 1 | 98 | 57.6 | 1354.2 |
-| 0 | 9902 | 39.8 | 1540.3 |
+| 1 | 98 | 58.4 | 1350.3 |
+| 0 | 9902 | 39.8 | 1540.6 |
 
 📁 *[View Result Data here](https://github.com/VIPER4T/manufacturing-diagnostics-sql/blob/c8e28c0c9510bfe84fd019e008398900facc9ff3/outputs/diagnostic%20analysis/OSF%20either%20due%20to%20torque%20or%20rotatioal%20speed%20-%20Distinguising%20between%20torque%20and%20rotational%20speed%20caused%20OSF.csv)*
 
@@ -140,7 +142,7 @@ WHERE twf = 1;
 **The Output Evidence:**
 | minimum_failure_time | maximum_failure_time |
 | :--- | :--- |
-| [Insert Data] | [Insert Data] |
+| 198 | 253 |
 
 📁 *[View Result Data here](https://github.com/VIPER4T/manufacturing-diagnostics-sql/blob/3f7c66c2f4d45a7c74747b8f2003428e0df5908c/outputs/Additional%20Result%20Data/Minimum%20and%20Maximum%20tool%20wear.csv)*
 
@@ -160,7 +162,7 @@ WHERE (twf + hdf + pwf + osf + rnf) > 1;
 **The Output Evidence:**
 | multiple_failure_count |
 | :--- |
-| [Insert Data] |
+| 24 |
 
 📁 *[View Result Data here](https://github.com/VIPER4T/manufacturing-diagnostics-sql/blob/3f7c66c2f4d45a7c74747b8f2003428e0df5908c/outputs/Additional%20Result%20Data/Total%20Machine%20Failure%20more%20than%20once.csv
 )*
