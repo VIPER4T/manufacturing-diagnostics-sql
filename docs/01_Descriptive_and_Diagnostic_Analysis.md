@@ -24,7 +24,7 @@ FROM md_schema.machine_telemetry;
 | :--- | :--- | :--- | :--- |
 | 10000 | 339 | 3.39 | 96.61 |
 
-📁 *[View Raw Output File](outputs/descriptive analysis/Failure Baseline - no of failures from the machine from number of batches.csv)*
+📁 *[View Result Data here](url)*
 
 **Key Takeaway:** The factory maintains a solid 96.61% baseline yield, meaning our diagnostic efforts must isolate a highly specific 3.39% failure gap.
 
@@ -47,7 +47,7 @@ FROM md_schema.machine_telemetry;
 | :--- | :--- | :--- | :--- | :--- |
 | [Insert Data] | [Insert Data] | [Insert Data] | [Insert Data] | [Insert Data] |
 
-📁 *[View Raw Output File](../outputs/02_failure_categorization.csv)*
+📁 *[View Result Data here](url)*
 
 **Key Takeaway:** The majority of factory breakdowns are not random; they are heavily concentrated in specific mechanical and electrical faults.
 
@@ -67,7 +67,7 @@ FROM md_schema.machine_telemetry;
 | :--- | :--- |
 | [Insert Data] | [Insert Data] |
 
-📁 *[View Raw Output File](../outputs/03_tool_lifecycle.csv)*
+📁 *[View Result Data here](url)*
 
 **Key Takeaway:** Tools are capable of reaching a maximum lifespan of 253 minutes under optimal conditions.
 
@@ -96,7 +96,7 @@ ORDER BY total_batches DESC;
 | :--- | :--- | :--- | :--- | :--- |
 | [Insert Data] | [Insert Data] | [Insert Data] | [Insert Data] | [Insert Data] |
 
-📁 *[View Raw Output File](../outputs/04_variant_bottleneck.csv)*
+📁 *[View Result Data here](url)*
 
 **Business Recommendation:** Variant L is driving the majority of mechanical breakdowns, specifically in Overstrain Failures (OSF). Operations must focus mechanical adjustments directly on the Variant L production lines.
 
@@ -121,7 +121,7 @@ ORDER BY osf DESC;
 | 1 | 98 | 57.6 | 1354.2 |
 | 0 | 9902 | 39.8 | 1540.3 |
 
-📁 *[View Raw Output File](../outputs/05_physics_of_overstrain.csv)*
+📁 *[View Result Data here](url)*
 
 **Business Recommendation:** The data proves OSF is caused by the machines bogging down (dropping roughly 200 RPM) while the motor strains to compensate (torque spiking by nearly 50%). Feed rates for Variant L materials must be reduced to prevent this mechanical bottleneck.
 
@@ -142,7 +142,7 @@ WHERE twf = 1;
 | :--- | :--- |
 | [Insert Data] | [Insert Data] |
 
-📁 *[View Raw Output File](../outputs/06_tool_wear_failures.csv)*
+📁 *[View Result Data here](url)*
 
 **Business Recommendation:** Despite the theoretical maximum of 253 minutes, empirical evidence proves no tool has ever failed before 198 minutes. Mandating a strict tool-swap protocol at exactly 190 minutes will theoretically eliminate 100% of Tool Wear Failures (TWF) while maximizing safe tool utility.
 
@@ -162,6 +162,6 @@ WHERE (twf + hdf + pwf + osf + rnf) > 1;
 | :--- |
 | [Insert Data] |
 
-📁 *[View Raw Output File](../outputs/07_cascading_failures.csv)*
+📁 *[View Result Data here](url)*
 
 **Business Recommendation:** The data reveals direct mechanical links between overstrain and electrical grids. When Variant L overstrains the motors, the resulting power draw frequently blows the factory breakers (Power Failures). Resolving the mechanical feed rates will organically resolve these secondary electrical cascades.
